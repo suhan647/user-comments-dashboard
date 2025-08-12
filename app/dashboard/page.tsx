@@ -99,26 +99,43 @@ export default function CommentsDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-indigo-50/30">
       <Header user={user} />
       
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Page Header */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-gray-900">Comments Dashboard</h1>
+        <div className="mb-12 animate-fade-in">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-gray-900 via-indigo-800 to-purple-800 bg-clip-text text-transparent mb-2">
+                Comments Dashboard
+              </h1>
+              <div className="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"></div>
+            </div>
+            <div className="hidden sm:flex items-center space-x-4">
+              <div className="bg-white/70 backdrop-blur-sm border border-gray-200 rounded-xl px-4 py-2 shadow-sm">
+                <div className="text-sm font-semibold text-gray-900">{comments.length}</div>
+                <div className="text-xs text-gray-500">Total Comments</div>
+              </div>
+              <div className="bg-white/70 backdrop-blur-sm border border-gray-200 rounded-xl px-4 py-2 shadow-sm">
+                <div className="text-sm font-semibold text-indigo-600">{filteredComments.length}</div>
+                <div className="text-xs text-gray-500">Filtered Results</div>
+              </div>
+            </div>
           </div>
-          <p className="mt-2 text-gray-600">
-            Manage and view all comments with advanced filtering and sorting capabilities
+          <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
+            Manage and view all comments with advanced filtering, sorting, and search capabilities. 
+            Get insights from user feedback with our comprehensive dashboard.
           </p>
         </div>
 
         {/* Filters Section */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-100 p-8 mb-8 animate-fade-in">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Sort Buttons */}
-            <div className="space-y-3">
-              <div className="flex gap-3">
+            <div className="space-y-4">
+              <h3 className="text-sm font-bold text-gray-700 uppercase tracking-wider mb-4">Sort Options</h3>
+              <div className="flex flex-wrap gap-3">
                 <SortButton
                   label="Sort Post ID"
                   sortKey="postId"
@@ -141,7 +158,8 @@ export default function CommentsDashboard() {
             </div>
 
             {/* Search Bar */}
-            <div className="space-y-3">
+            <div className="space-y-4">
+              <h3 className="text-sm font-bold text-gray-700 uppercase tracking-wider mb-4">Search & Filter</h3>
               <SearchBar
                 value={filterState.search}
                 onChange={updateSearch}
@@ -151,9 +169,14 @@ export default function CommentsDashboard() {
         </div>
 
         {/* Results Summary */}
-        <div className="mb-4">
-          <p className="text-sm text-gray-600">
-            Showing {filteredComments.length} of {comments.length} total comments
+        <div className="mb-6 animate-slide-in">
+          <p className="text-sm font-medium text-gray-600 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-lg border border-gray-100 inline-block shadow-sm">
+            <span className="text-indigo-600 font-semibold">{filteredComments.length}</span> of <span className="text-indigo-600 font-semibold">{comments.length}</span> comments found
+            {filterState.search && (
+              <span className="ml-2 text-gray-500">
+                for "<span className="font-semibold text-gray-700">{filterState.search}</span>"
+              </span>
+            )}
           </p>
         </div>
 

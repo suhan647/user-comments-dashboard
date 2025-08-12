@@ -73,16 +73,18 @@ export default function SortButton({ label, sortKey, currentSort, onSort }: Sort
     <button
       onClick={handleClick}
       className={`
-        px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200
+        px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 group
         ${isActive 
-          ? 'bg-white text-gray-800 border border-gray-300 shadow-sm' 
-          : 'bg-white text-gray-700 hover:bg-gray-200 border border-gray-200 shadow-sm'
+          ? 'bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-lg shadow-indigo-500/25 border-0' 
+          : 'bg-white/70 backdrop-blur-sm text-gray-700 hover:bg-white hover:text-indigo-600 border border-gray-200/50 shadow-sm hover:shadow-md hover:border-indigo-200'
         }
-        flex items-center space-x-2 hover:shadow-md
+        flex items-center space-x-2.5 hover:scale-105 active:scale-95
       `}
     >
       <span>{label}</span>
-      {getSortIcon()}
+      <div className={`transition-transform duration-200 ${isActive ? 'text-white' : 'text-gray-400 group-hover:text-indigo-500'}`}>
+        {getSortIcon()}
+      </div>
     </button>
   );
 } 
