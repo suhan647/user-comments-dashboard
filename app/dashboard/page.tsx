@@ -107,12 +107,6 @@ export default function CommentsDashboard() {
         <div className="mb-8">
           <div className="flex items-center justify-between">
             <h1 className="text-3xl font-bold text-gray-900">Comments Dashboard</h1>
-            <button
-              onClick={handleProfileClick}
-              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
-            >
-              View Profile
-            </button>
           </div>
           <p className="mt-2 text-gray-600">
             Manage and view all comments with advanced filtering and sorting capabilities
