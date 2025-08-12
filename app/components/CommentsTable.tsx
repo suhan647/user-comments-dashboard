@@ -80,11 +80,7 @@ export default function CommentsTable({ comments, currentPage, pageSize }: Comme
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
-                    {/* <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center mr-3">
-                      <span className="text-gray-600 text-xs font-bold">
-                        {comment.name.charAt(0).toUpperCase()}
-                      </span>
-                    </div> */}
+
                     <div className="text-sm font-medium text-gray-900">
                       {comment.name}
                     </div>
