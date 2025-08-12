@@ -111,12 +111,6 @@ export default function CommentsTable({ comments, currentPage, pageSize }: Comme
         </table>
       </div>
       
-      {/* Table footer */}
-      <div className="bg-gray-50 px-6 py-3 border-t border-gray-200">
-        <div className="text-xs text-gray-500 text-center">
-          Showing {comments.length} comments • Page {currentPage} of {Math.ceil(comments.length / pageSize)}
-        </div>
-      </div>
     </div>
   );
 } 

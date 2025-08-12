@@ -150,12 +150,6 @@ export default function CommentsDashboard() {
           </div>
         </div>
 
-        {/* Results Summary */}
-        <div className="mb-4">
-          <p className="text-sm text-gray-600">
-            Showing {filteredComments.length} of {comments.length} total comments
-          </p>
-        </div>
 
         {/* Comments Table */}
         <CommentsTable
