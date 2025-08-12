@@ -94,8 +94,8 @@ export default function Profile() {
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
           {/* User Identity Section */}
           <div className="flex items-start space-x-6 mb-8">
-            <div className="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-gray-600 font-bold text-2xl">
+            <div className="w-24 h-24 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+              <span className="text-white font-bold text-2xl">
                 {getInitials(user.name)}
               </span>
             </div>
